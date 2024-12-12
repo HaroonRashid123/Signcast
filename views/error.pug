@@ -1,0 +1,18 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Error - LED Screen Planner
+    link(rel="stylesheet" href="/styles.css")
+  body
+    .container
+      header
+        h1 Error
+        if error.status
+          h2= error.status
+        h3= message
+        if error.stack && process.env.NODE_ENV === 'development'
+          pre= error.stack
+        
+        a(href="/") Return to Home 

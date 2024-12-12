@@ -1,0 +1,89 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title LED Screen Planner - New Project
+    link(rel="stylesheet" href="/styles.css")
+    link(rel="stylesheet" href="/planner.css")
+  body
+    .container
+      header
+        h1 LED Screen Installation Planner
+        nav
+          a(href="/") Home
+          span.separator |
+          a(href="#" id="downloadPDF") Download PDF
+      
+      main.planner-grid
+        .config-panel
+          section.project-info
+            h2 Project Information
+            .form-group
+              label(for="projectTitle") Project Title
+              input#projectTitle(type="text" required)
+            .form-group
+              label(for="designer") Designer Name
+              input#designer(type="text" required)
+            .form-group
+              label(for="department") Department
+              input#department(type="text")
+            .form-group
+              label(for="date") Date
+              input#date(type="date" required)
+
+          section.equipment-selection
+            h2 Equipment Selection
+            .form-group
+              label(for="screenModel") LED Screen Model
+              select#screenModel(required)
+                option(value="") Select a model...
+                
+            .form-group
+              label(for="mountType") Mount Type
+              select#mountType(required)
+                option(value="") Select mount...
+                
+            .form-group
+              label(for="mediaPlayer") Media Player
+              select#mediaPlayer(required)
+                option(value="") Select player...
+                
+            .form-group
+              label(for="receptacle") Receptacle Box
+              select#receptacle(required)
+                option(value="") Select box...
+
+          section.installation-config
+            h2 Installation Configuration
+            .form-group
+              label(for="orientation") Screen Orientation
+              select#orientation(required)
+                option(value="horizontal") Horizontal
+                option(value="vertical") Vertical
+            
+            .form-group
+              label(for="mountType") Installation Type
+              select#installationType(required)
+                option(value="flat") Flat Wall
+                option(value="niche") Niche (Recessed)
+            
+            .form-group
+              label(for="floorToCenter") Floor to Screen Center (inches)
+              input#floorToCenter(type="number" required min="0")
+            
+            .form-group.niche-depth.hidden
+              label(for="nicheDepth") Niche Depth (inches)
+              input#nicheDepth(type="number" min="0")
+
+        .preview-panel
+          #diagramPreview
+            h2 Installation Preview
+            .diagram-container
+              canvas#diagramCanvas
+            .dimensions-overlay
+      
+      footer
+        p © 2024 LED Screen Installation Planner
+
+    script(src="/planner.js") 

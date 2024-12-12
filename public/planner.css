@@ -1,0 +1,141 @@
+.planner-grid {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 20px;
+  padding: 20px;
+  height: calc(100vh - 100px);
+}
+
+.config-panel {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.preview-panel {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  min-height: 800px;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+input, select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.hidden {
+  display: none;
+}
+
+nav {
+  margin-top: 1rem;
+}
+
+nav a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+}
+
+.separator {
+  margin: 0 1rem;
+  color: #ccc;
+}
+
+.diagram-container {
+  width: 100%;
+  height: 750px;
+  border: 1px solid #ddd;
+  margin-top: 1rem;
+  position: relative;
+}
+
+canvas#diagramCanvas {
+  width: 100%;
+  height: 100%;
+}
+
+.dimensions-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+
+.button-group button {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+}
+
+.button-group button.active {
+  background: #2980b9;
+  color: white;
+}
+
+.dimensions-panel {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.dimension-group {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.notes-panel {
+  margin-top: 20px;
+  padding: 20px;
+  background: #f5f5f5;
+  border-radius: 4px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2980b9;  /* SignCast blue */
+    margin: 0;
+    padding: 10px 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+} 

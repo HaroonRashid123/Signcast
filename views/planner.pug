@@ -1,0 +1,84 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title LED Screen Planner - New Project
+    link(rel="stylesheet" href="/styles.css")
+    link(rel="stylesheet" href="/planner.css")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js")
+  body
+    .container
+      header
+        h1.logo SignCast
+        nav
+          a(href="/") Home
+          span.separator |
+          a(href="#" id="downloadPDF") Download PDF
+
+      main.planner-grid
+        .config-panel
+          section.project-info
+            h2 Description
+            .form-group
+              label(for="projectTitle") Title
+              input#projectTitle(type="text" required)
+            .form-group
+              label(for="drawer") Drawer
+              input#drawer(type="text" required)
+            .form-group
+              label(for="department") Department
+              input#department(type="text" required)
+            .form-group
+              label(for="projectDate") Date
+              input#projectDate(type="date" required)
+
+          section.equipment-selection
+            h2 Configuration
+            .form-group
+              label(for="screenModel") Screen
+              select#screenModel(required)
+                option(value="") Select a model...
+
+            .form-group
+              label(for="mountType") Mount
+              select#mountType(required)
+                option(value="") Select mount...
+
+            .form-group
+              label(for="mediaPlayer") Media Player
+              select#mediaPlayer(required)
+                option(value="") Select player...
+
+            .form-group
+              label(for="receptacle") Receptacle Box
+              select#receptacle(required)
+                option(value="") Select box...
+
+          section.installation-config
+            h2 Installation Settings
+            .form-group.orientation-toggle
+              label Screen Orientation
+              .button-group
+                button#vertical(type="button") Vertical
+                button#horizontal(type="button" class="active") Horizontal
+
+            .form-group.install-type-toggle
+              label Installation Type
+              .button-group
+                button#niche(type="button") Niche
+                button#flatWall(type="button" class="active") Flat Wall
+
+            .form-group
+              label(for="floorToCenter") Floor Distance (inches)
+              input#floorToCenter(type="number" required min="0" value="50")
+
+            .form-group.niche-depth.hidden
+              label(for="nicheDepth") Niche Depth Variance (inches)
+              input#nicheDepth(type="number" min="0" step="0.5" value="0.5")
+
+        .preview-panel
+          .diagram-container
+            canvas#diagramCanvas
+
+    script(src="/planner.js") 
