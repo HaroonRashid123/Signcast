@@ -41,8 +41,6 @@ document.addEventListener('DOMContentLoaded', function() {
         try {
             const response = await fetch('/api/equipment');
             const data = await response.json();
-            console.log('Received equipment data:', data);
-            
             equipmentData = data;
             populateDropdowns();
         } catch (error) {
